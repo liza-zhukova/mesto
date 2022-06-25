@@ -1,0 +1,12 @@
+.popup__container_button{
+    margin-top: 48px;
+    margin-bottom: 37px;
+    background-color: #000;
+}
+
+
+@media screen and (max-width:768px){
+    .popup__container_button{
+        margin-bottom: 27px;
+    }    
+}

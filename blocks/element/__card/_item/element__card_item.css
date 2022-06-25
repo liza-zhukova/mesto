@@ -1,0 +1,9 @@
+.element__card_item{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 79px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}

@@ -1,0 +1,19 @@
+.element{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+@media screen and (max-width: 768px){
+    .element{
+        flex-direction: column;
+        margin-top: 36px;
+    }
+}
+
+@media screen and (min-width: 769px){
+    .element{
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+}

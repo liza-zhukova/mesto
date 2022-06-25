@@ -1,0 +1,14 @@
+.popup__container_title{
+    margin: 0 auto;
+    margin-top: 34px;
+    color: #000;
+    font-family: 'Inter',sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+@media screen and (max-width: 768px){
+    .popup__container_title{
+        font-size: 18px;
+    }
+}
