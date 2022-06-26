@@ -4,4 +4,8 @@
     font-weight: normal;
     font-size: 14px;
     color: #000;
+    border: none;
+    border-bottom: 1px solid darkgrey;
+    height: 27px;
+    padding-bottom: 13px;
 }

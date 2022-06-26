@@ -10,3 +10,9 @@
         margin-bottom: 27px;
     }    
 }
+
+
+.popup__container_button:hover{
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
