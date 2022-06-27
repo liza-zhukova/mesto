@@ -2,13 +2,12 @@
     margin: 0;
     display: flex;
     flex-flow: wrap;
-    width: 336px;
     align-self: center;
 }
 
 
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 879px){
     .profile__info{
         justify-content: center;
     }

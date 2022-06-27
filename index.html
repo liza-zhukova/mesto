@@ -12,14 +12,14 @@
 <body>
     <div class="page">
         <div class="popup">
-          <form class="popup__container">
-              <p class="popup__container_title">Редактировать профиль</p>
-              <input class="popup__container_name" type="text" placeholder="Имя">
-              <input class="popup__container_opinion" type="text" placeholder="О себе">
-              <button class="popup__container_button">
-                  <p class="popup__container_button_name">Сохранить</p>
-              </button>
-          </form>
+            <form class="popup__container">
+                <p class="popup__container_title">Редактировать профиль</p>
+                <input class="popup__container_name" type="text" placeholder="Имя">
+                <input class="popup__container_opinion" type="text" placeholder="О себе">
+                <button class="popup__container_button">
+                    <p class="popup__container_button_name">Сохранить</p>
+                </button>
+            </form>
             <div class="popup__close"></div>
         </div>
         <header class="header">
@@ -31,55 +31,57 @@
                 <div class="profile__avatar"></div>
                 <div class="profile__info">
                     <p class="profile__info_name">Жак-Ив Кусто</p>
-                    <img class="profile__info_edit-button" src="images/Edit Button.svg" alt="кнопка редактора профиля"> 
-                    <p class="profile__info_opinion">Исследователь океана</p>           
+                    <img class="profile__info_edit-button" src="images/Edit Button.svg" alt="кнопка редактора профиля">
+                    <p class="profile__info_opinion">Исследователь океана</p>
                 </div>
                 <div class="profile__add-button"></div>
             </section>
-            <ul class="element">
-                <li class="element__card">
-                    <img class="element__card_img" src="images/карачаево.jpg" alt="Карачаевск">
-                    <div class="element__card_item">
-                        <p class="card_item_text">Карачаевск</p>
-                        <img class="card_item_like" src="images/Group.svg">
-                    </div>
-                </li>
-                <li class="element__card">
-                    <img class="element__card_img" src="images/эльбрус.png" alt="Эльбрус">
-                    <div class="element__card_item">
-                        <p class="card_item_text">Гора Эльбрус</p>
-                        <img class="card_item_like" src="images/Group.svg">
-                    </div>
-                </li>
-                <li class="element__card">
-                    <img class="element__card_img" src="images/домбай.png" alt="Домбай">
-                    <div class="element__card_item">
-                        <p class="card_item_text">Домбай</p>
-                        <img class="card_item_like" src="images/Group.svg">
-                    </div>
-                </li>
-                <li class="element__card">
-                    <img class="element__card_img" src="images/эльбрус.png" alt="Эльбрус">
-                    <div class="element__card_item">
-                        <p class="card_item_text">Гора Эльбрус</p>
-                        <img class="card_item_like" src="images/Group.svg">
-                    </div>
-                </li>
-                <li class="element__card">
-                    <img class="element__card_img" src="images/домбай.png" alt="Домбай">
-                    <div class="element__card_item">
-                        <p class="card_item_text">Домбай</p>
-                        <img class="card_item_like" src="images/Group.svg">
-                    </div>
-                </li>
-                <li class="element__card">
-                    <img class="element__card_img" src="images/карачаево.jpg" alt="Карачаевск">
-                    <div class="element__card_item">
-                        <p class="card_item_text">Карачаево-Черкессия</p>
-                        <img class="card_item_like" src="images/Group.svg">
-                    </div>
-                </li>
-            </ul>
+            <section class="cards">
+                <ul class="element">
+                    <li class="element__card">
+                        <img class="element__card_img" src="images/карачаево.jpg" alt="Карачаевск">
+                        <div class="element__card_item">
+                            <p class="card_item_text">Карачаевск</p>
+                            <img class="card_item_like" src="images/Group.svg">
+                        </div>
+                    </li>
+                    <li class="element__card">
+                        <img class="element__card_img" src="images/эльбрус.png" alt="Эльбрус">
+                        <div class="element__card_item">
+                            <p class="card_item_text">Гора Эльбрус</p>
+                            <img class="card_item_like" src="images/Group.svg">
+                        </div>
+                    </li>
+                    <li class="element__card">
+                        <img class="element__card_img" src="images/домбай.png" alt="Домбай">
+                        <div class="element__card_item">
+                            <p class="card_item_text">Домбай</p>
+                            <img class="card_item_like" src="images/Group.svg">
+                        </div>
+                    </li>
+                    <li class="element__card">
+                        <img class="element__card_img" src="images/эльбрус.png" alt="Эльбрус">
+                        <div class="element__card_item">
+                            <p class="card_item_text">Гора Эльбрус</p>
+                            <img class="card_item_like" src="images/Group.svg">
+                        </div>
+                    </li>
+                    <li class="element__card">
+                        <img class="element__card_img" src="images/домбай.png" alt="Домбай">
+                        <div class="element__card_item">
+                            <p class="card_item_text">Домбай</p>
+                            <img class="card_item_like" src="images/Group.svg">
+                        </div>
+                    </li>
+                    <li class="element__card">
+                        <img class="element__card_img" src="images/карачаево.jpg" alt="Карачаевск">
+                        <div class="element__card_item">
+                            <p class="card_item_text">Карачаево-Черкессия</p>
+                            <img class="card_item_like" src="images/Group.svg">
+                        </div>
+                    </li>
+                </ul>
+            </section>
         </main>
         <footer class="footer">
             <p class="footer__text">&copy;2020 Mesto Russia</p>

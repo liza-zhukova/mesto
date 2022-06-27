@@ -3,17 +3,18 @@
     opacity: 0.7;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 879px){
     .profile__info_edit-button{
         width: 18px;
         height: 18px;
     }
 }
 
-@media screen and (min-width: 769px){
+@media screen and (min-width: 880px){
     .profile__info_edit-button{
         width: 24px;
         height: 24px;
+        align-self: center;
     }
 }
 

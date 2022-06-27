@@ -3,13 +3,13 @@
     display: flex;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 879px){
     .profile{
         flex-direction: column;
     }
 }
 
-@media screen and (min-width: 769px){
+@media screen and (min-width: 880px){
     .profile{
         align-items: center;
     }

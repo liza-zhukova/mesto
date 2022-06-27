@@ -1,12 +1,11 @@
 .header__line{
-    margin: 0 auto;
-    background-image: url("../../../images/Line.svg");
-    height: 2px;
-    width: 880px;
+    margin: 0;
+    border: 1px solid darkgray;
+    max-width: 880px;
 }
 
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 879px){
     .header__line{
         max-width: 320px;
     }

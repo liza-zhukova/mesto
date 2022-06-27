@@ -9,7 +9,7 @@
     margin-right: 30px;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 879px){
     .profile__avatar{
         align-self: center;
         margin-bottom: 23px;
