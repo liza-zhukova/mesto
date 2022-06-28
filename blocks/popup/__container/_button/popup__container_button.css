@@ -2,12 +2,21 @@
     margin-top: 48px;
     margin-bottom: 37px;
     background-color: #000;
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    height: 50px;
+    outline: none;
+    border: none;
 }
 
 
 @media screen and (max-width: 879px){
     .popup__container_button{
         margin-bottom: 27px;
+        height: 46px;
     }    
 }
 
@@ -16,3 +25,4 @@
     opacity: 0.7;
     transition: opacity 0.3s;
 }
+
