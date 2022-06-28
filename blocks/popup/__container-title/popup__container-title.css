@@ -1,4 +1,4 @@
-.popup__container_title{
+.popup__container-title{
     margin: 0 auto;
     margin-top: 34px;
     color: #000;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (max-width: 879px){
-    .popup__container_title{
+    .popup__container-title{
         font-size: 18px;
     }
 }

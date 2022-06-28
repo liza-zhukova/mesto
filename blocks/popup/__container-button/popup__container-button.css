@@ -1,4 +1,4 @@
-.popup__container_button{
+.popup__container-button{
     margin-top: 48px;
     margin-bottom: 37px;
     background-color: #000;
@@ -14,15 +14,14 @@
 
 
 @media screen and (max-width: 879px){
-    .popup__container_button{
+    .popup__container-button{
         margin-bottom: 27px;
         height: 46px;
     }    
 }
 
 
-.popup__container_button:hover{
+.popup__container-button:hover{
     opacity: 0.7;
     transition: opacity 0.3s;
 }
-
