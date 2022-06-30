@@ -1,6 +1,6 @@
 .header__line{
     margin: 0;
-    border: 1px solid darkgray;
+    border: 0.5px solid darkgray;
     max-width: 880px;
 }
 

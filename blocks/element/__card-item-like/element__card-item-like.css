@@ -1,4 +1,4 @@
-.card_item_like:hover{
+.element__card-item-like:hover{
     opacity: 0.4;
     transition: opacity 0.3s;
 }
