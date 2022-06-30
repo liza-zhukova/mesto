@@ -6,3 +6,15 @@
     margin-bottom: 400px;
     margin-left: 10px;
 }
+
+
+@media screen and (max-width: 880px){
+    .popup__close{
+        width: 20px;
+        height: 20px;
+        background-image: url(../../../images/Close_Icon_small.svg);
+        align-self: center;
+        margin-bottom: 16px;
+        margin-left: 290px;
+    }
+}
