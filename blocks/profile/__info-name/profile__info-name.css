@@ -2,7 +2,8 @@
     margin: 0;
     margin-right: 16px;
     color: #ffff;
-    font-family: 'Inter-Medium', 'Optima', sans-serif;
+    font-family: 'Inter', 'Optima', sans-serif;
+    font-weight: 500;
     align-self: baseline;
     max-width: 330px;
     min-width: auto;
