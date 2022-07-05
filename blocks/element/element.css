@@ -1,21 +1,17 @@
 .element{
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
+    justify-content: space-between;
+    margin-top: 40px;
     
 }
 
-@media screen and (max-width: 879px){
+@media screen and (max-width: 920px){
     .element{
         flex-direction: column;
         margin-top: 36px;
-    }
-}
-
-@media screen and (min-width: 880px){
-    .element{
-        justify-content: space-between;
-        margin-top: 40px;
     }
 }

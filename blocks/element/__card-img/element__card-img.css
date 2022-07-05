@@ -1,5 +1,5 @@
 .element__card-img{
-    border-top-right-radius: 5%;
-    border-top-left-radius: 5%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     height: 282px;
 }
