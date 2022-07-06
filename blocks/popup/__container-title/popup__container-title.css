@@ -1,7 +1,5 @@
 .popup__container-title{
-    margin: 0 auto;
-    margin-top: 34px;
-    margin-bottom: 24px;
+    margin: 0;
     color: #000;
     font-family: 'Inter', 'Arial Black', sans-serif;
     font-size: 24px;

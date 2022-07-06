@@ -9,8 +9,8 @@
     font: inherit;
     background-color: transparent;
     position: absolute;
-    margin-top: -40px;
-    margin-left: 350px;
+    top: -50px;
+    left: 440px;
     cursor: pointer;
 }
 
@@ -20,7 +20,8 @@
         width: 20px;
         height: 20px;
         background-image: url(../../../images/Close_Icon_small.svg);
-        margin-left: 230px;
+        left: 260px;
+        top: -40px;
     }
 }
 
