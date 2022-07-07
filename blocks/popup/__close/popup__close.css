@@ -10,7 +10,7 @@
     background-color: transparent;
     position: absolute;
     top: -50px;
-    left: 440px;
+    right: -45px;
     cursor: pointer;
 }
 
@@ -20,7 +20,7 @@
         width: 20px;
         height: 20px;
         background-image: url(../../../images/Close_Icon_small.svg);
-        left: 260px;
+        right: -1px;
         top: -40px;
     }
 }
