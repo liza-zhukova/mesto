@@ -22,7 +22,6 @@ function closePopap(){
 };
 
 
-
 function formSubmitHandler (evt) {
     evt.preventDefault();
     nameOfProfile.textContent = nameInput.value
@@ -36,8 +35,43 @@ editButton.addEventListener('click', openPopap);
 closeButton.addEventListener('click', closePopap);
 
 
+// форма добавления карточки
+let formCard = document.querySelector('.popup__container_card');
+let closeButtonCardForm = document.querySelector('.popup__close_card');
+let cardPopup = document.querySelector('.popup_add-card');
+let titleInput = document.querySelector('#title');
+let linkInput = document.querySelector('#link');
+
+
+
+function openformCard(){
+  cardPopup.classList.add('popup_opened');
+};
+
+function closeCard(){
+  cardPopup.classList.remove('popup_opened');
+};
+
+
+function addCard(evt){
+  evt.preventDefault();
+  templateCard(titleInput.value, linkInput.value)
+  closeCard();
+  titleInput.value = '';
+  linkInput.value ='';
+};
+
+
+addButton.addEventListener('click', openformCard);
+closeButtonCardForm .addEventListener('click', closeCard);
+formCard.addEventListener('submit', addCard);
+
+
+
 //шаблон узла
 let element = document.querySelector('.element');
+let photoPopup = document.querySelector('.popup_photo');
+
 
 
 function templateCard(text, img){
@@ -45,14 +79,28 @@ function templateCard(text, img){
   let li = template.content.cloneNode(true);
   li.querySelector('.element__card-item-text').textContent = text;
   li.querySelector('.element__card-img').setAttribute('src', img);
-  li.querySelector('.element__card-item-like').addEventListener('click', function(evt){
+  li.querySelector('.element__card-item-like').addEventListener('click', function(evt){  //функция добавления и удаления лайка
     evt.target.classList.toggle('element__card-item-like_active');
   });
-  li.querySelector('.element__card-delete').addEventListener('click', function(){
-    document.querySelector('.element__card').remove();
-  });
+  li.querySelector('.element__card-img').addEventListener('click', function(){  //функция открытия карточки
+    photoPopup.classList.add('popup_opened');
+    document.querySelector('.popup_photo-container-title').textContent = text;
+    document.querySelector('.popup_photo-big').setAttribute('src', img);
+    });
   element.prepend(li);
 };
+
+
+
+
+//закрытие попапа карточки
+let closePhoto = document.querySelector('.popup__close_photo-big');
+
+function closePhotoPopup(){
+  photoPopup.classList.remove('popup_opened');
+};
+
+closePhoto.addEventListener('click', closePhotoPopup);   
 
 
 
@@ -94,39 +142,7 @@ function renderCard(){
 renderCard();
 
 
-// форма добавления карточки
-let formCard = document.querySelector('.popup__container_card');
-let closeButtonCardForm = document.querySelector('.popup__close_card');
-let cardPopup = document.querySelector('.popup_add-card');
-let titleInput = document.querySelector('#title');
-let linkInput = document.querySelector('#link');
-
-
-
-function openformCard(){
-  cardPopup.classList.add('popup_opened');
-};
-
-function closeCard(){
-  cardPopup.classList.remove('popup_opened');
-};
-
-
-function addCard(evt){
-  evt.preventDefault();
-  templateCard(titleInput.value, linkInput.value)
-  closeCard();
-  titleInput.value = '';
-  linkInput.value ='';
-};
-
-
-addButton.addEventListener('click', openformCard);
-closeButtonCardForm .addEventListener('click', closeCard);
-formCard.addEventListener('submit', addCard);
 
 
 
 
-
-   
