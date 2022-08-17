@@ -7,7 +7,6 @@ let opinionOfProfile = document.querySelector('.profile__info-opinion');
 let addButton = document.querySelector('.profile__add-button');
 let closeButton = document.querySelector('.popup__close');
 let formElement = document.querySelector('.popup__container');
-let bigPhoto = document.querySelector('.popup_photo');
 
 
 //редактировать профиль
@@ -37,7 +36,7 @@ editButton.addEventListener('click', openPopap);
 closeButton.addEventListener('click', closePopap);
 
 
-//добавление 6 карточек
+//шаблон узла
 let element = document.querySelector('.element');
 
 
@@ -46,10 +45,18 @@ function templateCard(text, img){
   let li = template.content.cloneNode(true);
   li.querySelector('.element__card-item-text').textContent = text;
   li.querySelector('.element__card-img').setAttribute('src', img);
+  li.querySelector('.element__card-item-like').addEventListener('click', function(evt){
+    evt.target.classList.toggle('element__card-item-like_active');
+  });
+  li.querySelector('.element__card-delete').addEventListener('click', function(){
+    document.querySelector('.element__card').remove();
+  });
   element.prepend(li);
 };
 
 
+
+//добавление 6 карточек
 const initialCards = [
   {
     name: 'Байкал',
@@ -120,6 +127,6 @@ formCard.addEventListener('submit', addCard);
 
 
 
-//добавить или убрать лайк
+
 
    
