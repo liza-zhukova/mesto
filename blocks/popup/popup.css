@@ -1,6 +1,8 @@
 .popup{
     margin: 0;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -10,6 +12,7 @@
     z-index: 1;
     top: 0;
     right: 0;
+    transition: visibility 0.3s, opacity 0.3s linear;
 }
 
 @media screen and (max-width: 920px){
@@ -17,3 +20,4 @@
         flex-direction: column-reverse;
     }
 }
+
