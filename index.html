@@ -24,18 +24,18 @@
             <button class="profile__add-button" type="button"></button>
         </section>
         <section class="cards">
-                <ul class="element">
-                    <template id="template">
-                        <li class="element__card">
-                            <img class="element__card-img">
-                            <div class="element__card-item">
-                              <h2 class="element__card-item-text"></h2>
-                              <button class="element__card-item-like" type="button"></button>
-                            </div>
-                            <div class="element__card-delete"></div>
-                        </li>
-                    </template>
-                </ul>
+            <ul class="element">
+                <template id="template">
+                    <li class="element__card">
+                        <img class="element__card-img">
+                        <div class="element__card-item">
+                            <h2 class="element__card-item-text"></h2>
+                            <button class="element__card-item-like" type="button"></button>
+                        </div>
+                        <div class="element__card-delete"></div>
+                    </li>
+                </template>
+            </ul>
         </section>
     </main>
     <footer class="footer">
@@ -57,7 +57,8 @@
             <h2 class="popup__container-title">Новое место</h2>
             <form class="popup__container-form" method="post" name="myForm">
                 <input class="popup__container-item" id="title" type="text" placeholder="Название" name="cardTitle">
-                <input class="popup__container-item" id="link" type="text" placeholder="Ссылку на картинку" name="cardLink">
+                <input class="popup__container-item" id="link" type="text" placeholder="Ссылку на картинку"
+                    name="cardLink">
                 <button type="submit" class="popup__container-button">Сохранить</button>
             </form>
             <button class="popup__close popup__close_card" type="button"></button>
@@ -66,7 +67,7 @@
     <div class="popup popup_photo">
         <div class="popup_photo-container">
             <img class="popup_photo-big">
-            <p class ='popup_photo-container-title'></p>
+            <p class='popup_photo-container-title'></p>
             <button class="popup__close popup__close_photo-big" type="button"></button>
         </div>
     </div>

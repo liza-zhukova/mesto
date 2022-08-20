@@ -77,8 +77,10 @@ const photoPopup = document.querySelector('.popup_photo');
 function templateCard(text, img){
   const template = document.querySelector('#template');
   const li = template.content.cloneNode(true);
+  const image = li.querySelector('.element__card-img');
+  image.setAttribute('src', img);
+  image.setAttribute('alt', text);
   li.querySelector('.element__card-item-text').textContent = text;
-  li.querySelector('.element__card-img').setAttribute('src', img);
   li.querySelector('.element__card-item-like').addEventListener('click', (evt) =>{  //функция добавления и удаления лайка
     evt.target.classList.toggle('element__card-item-like_active');
   });
