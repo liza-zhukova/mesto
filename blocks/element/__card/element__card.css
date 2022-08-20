@@ -6,10 +6,16 @@
     height: 361px;
     align-self: center;
     position: relative;
-    margin-left: 11px;
+    margin-right: 17px;
 }
 
 
-.element__card:last-child{
-    margin-left: 0;
+.element__card:nth-child(3n){
+    margin-right: 0;
+}
+
+@media screen and (max-width: 920px){
+    .element__card{
+        margin-right: 0;
+    }
 }
