@@ -86,8 +86,8 @@ function templateCard(text, img){
   });
   li.querySelector('.element__card-img').addEventListener('click', () =>{  //функция открытия карточки
     photoPopup.classList.add('popup_opened');
-    document.querySelector('.popup_photo-container-title').textContent = text;
-    document.querySelector('.popup_photo-big').setAttribute('src', img);
+    document.querySelector('.popup__photo-container-title').textContent = text;
+    document.querySelector('.popup__photo-big').setAttribute('src', img);
     });
     li.querySelector('.element__card-delete').addEventListener('click', (elem) =>{
       const card = elem.target.closest('.element__card');
