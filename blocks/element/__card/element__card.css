@@ -19,3 +19,9 @@
         margin-right: 0;
     }
 }
+
+
+.element__card:hover{
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}

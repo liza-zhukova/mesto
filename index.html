@@ -45,8 +45,8 @@
         <div class="popup__container">
             <h2 class="popup__container-title">Редактировать профиль</h2>
             <form class="popup__container-form" method="post" name="myForm">
-                <input class="popup__container-item" id="name" type="text" placeholder="Имя" name="myName">
-                <input class="popup__container-item" id="opinion" type="text" placeholder="О себе" name="myOpinion">
+                <input class="popup__container-item" id="name" type="text" placeholder="Имя" name="myName" required>
+                <input class="popup__container-item" id="opinion" type="text" placeholder="О себе" name="myOpinion" required>
                 <button type="submit" class="popup__container-button">Сохранить</button>
             </form>
             <button class="popup__close" type="button"></button>
@@ -55,10 +55,9 @@
     <div class="popup popup_add-card">
         <div class="popup__container popup__container_card">
             <h2 class="popup__container-title">Новое место</h2>
-            <form class="popup__container-form" method="post" name="myForm">
-                <input class="popup__container-item" id="title" type="text" placeholder="Название" name="cardTitle">
-                <input class="popup__container-item" id="link" type="text" placeholder="Ссылку на картинку"
-                    name="cardLink">
+            <form class="popup__container-form" method="post" name="cardForm">
+                <input class="popup__container-item" id="title" type="text" placeholder="Название" name="cardTitle" required>
+                <input class="popup__container-item" id="link" type="url" placeholder="Ссылку на картинку" name="cardLink" required>
                 <button type="submit" class="popup__container-button">Сохранить</button>
             </form>
             <button class="popup__close popup__close_card" type="button"></button>
@@ -72,7 +71,7 @@
         </div>
     </div>
 
-    <script src="scripts/index.js"></script>
+    <script defer src="scripts/index.js"></script>
 </body>
 
 </html>

@@ -136,16 +136,10 @@ const initialCards = [
 ];
 
 
-function renderCard(){
+function renderInitilCards(){
   initialCards.forEach((item) =>{
     templateCard(item.name, item.link);
   });
 };
 
-renderCard();
-
-
-
-
-
-
+renderInitilCards();
