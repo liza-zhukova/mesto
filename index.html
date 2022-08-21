@@ -18,10 +18,10 @@
             <div class="profile__avatar"></div>
             <div class="profile__info">
                 <h1 class="profile__info-name">Жак-Ив Кусто</h1>
-                <button class="profile__info-edit-button" type="button"></button>
+                <button class="profile__info-edit-button" type="button" aria-label="edit button"></button>
                 <p class="profile__info-opinion">Исследователь океана</p>
             </div>
-            <button class="profile__add-button" type="button"></button>
+            <button class="profile__add-button" type="button" aria-label="add button"></button>
         </section>
         <section class="cards">
             <ul class="element">
@@ -30,9 +30,9 @@
                         <img class="element__card-img">
                         <div class="element__card-item">
                             <h2 class="element__card-item-text"></h2>
-                            <button class="element__card-item-like" type="button"></button>
+                            <button class="element__card-item-like" type="button" aria-label="like button"></button>
                         </div>
-                        <div class="element__card-delete"></div>
+                        <button class="element__card-delete" aria-label="delete button"></button>
                     </li>
                 </template>
             </ul>
@@ -41,36 +41,37 @@
     <footer class="footer">
         <p class="footer__text">&copy;2020 Mesto Russia</p>
     </footer>
-    <div class="popup">
-        <div class="popup__container">
+    <div class="popup" id="profilePopup">
+        <div class="popup__container" id="profilePopupContainer">
             <h2 class="popup__container-title">Редактировать профиль</h2>
             <form class="popup__container-form" method="post" name="myForm">
                 <input class="popup__container-item" id="name" type="text" placeholder="Имя" name="myName" required>
                 <input class="popup__container-item" id="opinion" type="text" placeholder="О себе" name="myOpinion" required>
                 <button type="submit" class="popup__container-button">Сохранить</button>
             </form>
-            <button class="popup__close" type="button"></button>
+            <button class="popup__close" id ="closeEditButton" type="button" aria-label="close button"></button>
         </div>
     </div>
-    <div class="popup popup_add-card">
-        <div class="popup__container popup__container_card">
+    <div class="popup" id="addCardPopup">
+        <div class="popup__container" id="addPopupContainer">
             <h2 class="popup__container-title">Новое место</h2>
             <form class="popup__container-form" method="post" name="cardForm">
                 <input class="popup__container-item" id="title" type="text" placeholder="Название" name="cardTitle" required>
                 <input class="popup__container-item" id="link" type="url" placeholder="Ссылку на картинку" name="cardLink" required>
                 <button type="submit" class="popup__container-button">Сохранить</button>
             </form>
-            <button class="popup__close popup__close_card" type="button"></button>
+            <button class="popup__close" id ="closeAddButton" type="button" aria-label="close button"></button>
         </div>
     </div>
-    <div class="popup popup_photo">
-        <div class="popup__photo-container">
+    <div class="popup popup_photo" id="cardPopup">
+        <div class="popup__photo-container" id="cardPopupContainer">
             <img class="popup__photo-big">
             <p class='popup__photo-container-title'></p>
-            <button class="popup__close popup__close_photo-big" type="button"></button>
+            <button class="popup__close" id="closeCardButton" type="button" aria-label="close button"></button>
         </div>
     </div>
 
+    <script defer src="scripts/cards.js"></script>
     <script defer src="scripts/index.js"></script>
 </body>
 

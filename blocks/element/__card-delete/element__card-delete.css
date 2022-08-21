@@ -5,6 +5,12 @@
     position: absolute;
     top: 20px;
     right: 20px;
+    padding: 0;
+    color: inherit;
+    border: none;
+    font: inherit;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 
