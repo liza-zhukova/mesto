@@ -66,7 +66,7 @@ function closeAddForm(){
 
 function submitAddCard(evt){
   evt.preventDefault();
-  createCard(titleInput.value, linkInput.value);
+  addCard(createCard(titleInput.value, linkInput.value));
   closeAddForm();
   titleInput.value = '';
   linkInput.value ='';
@@ -82,7 +82,7 @@ addForm.addEventListener('submit', submitAddCard);
 //шаблон узла
 const elementsContainer = document.querySelector('.element');
 const cardPopup = document.querySelector('#cardPopup');
-const template = document.querySelector('#template').content;
+const template = document.querySelector('#template').content.querySelector('.element__card');
 
 
 function createCard(text, img){
@@ -99,11 +99,16 @@ function createCard(text, img){
     document.querySelector('.popup__photo-container-title').textContent = text;
     document.querySelector('.popup__photo-big').setAttribute('src', img);
   });
-  newCard.querySelector('.element__card-delete').addEventListener('click', (elem) =>{
-    const card = elem.target.closest('.element__card'); //если не добавить эту переменную, удаления не происходит, в консоли пишется, что это #document-fragment
-    card.remove();
-  });
-  elementsContainer.prepend(newCard);  //не получается отделить вставку от создания, карточки не добавляются
+  newCard.querySelector('.element__card-delete').addEventListener('click', () =>{
+    newCard.remove();
+  }); 
+  return newCard;
+};
+
+
+
+function addCard(card){
+  elementsContainer.prepend(card);  
 };
 
 
@@ -123,7 +128,7 @@ closeCardButton.addEventListener('click', closePhotoPopup);
 
 function renderInitilCards(){
   initialCards.forEach((item) =>{
-    createCard(item.name, item.link);
+    addCard(createCard(item.name, item.link));
   });
 };
 
