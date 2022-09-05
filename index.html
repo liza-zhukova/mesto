@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="pages/index.css">
     <script defer src="scripts/cards.js"></script>
     <script defer src="scripts/index.js"></script>
+    <script defer src="scripts/validate.js"></script>
 </head>
 
 <body class="page">
@@ -47,8 +48,8 @@
         <div class="popup__container" id="profilePopupContainer">
             <h2 class="popup__container-title">Редактировать профиль</h2>
             <form class="popup__container-form" method="post" name="myForm">
-                <input class="popup__container-item" id="name" type="text" placeholder="Имя" name="myName" required>
-                <input class="popup__container-item" id="opinion" type="text" placeholder="О себе" name="myOpinion" required>
+                <input class="popup__container-item" id="name" type="text" placeholder="Имя" name="myName" minlength="2" maxlength="40" required>
+                <input class="popup__container-item" id="opinion" type="text" placeholder="О себе" name="myOpinion" minlength="2" maxlength="200" required>
                 <button type="submit" class="popup__container-button">Сохранить</button>
             </form>
             <button class="popup__close" id ="closeEditButton" type="button" aria-label="закрыть"></button>
@@ -58,7 +59,7 @@
         <div class="popup__container" id="addPopupContainer">
             <h2 class="popup__container-title">Новое место</h2>
             <form class="popup__container-form" method="post" name="cardForm">
-                <input class="popup__container-item" id="title" type="text" placeholder="Название" name="cardTitle" required>
+                <input class="popup__container-item" id="title" type="text" placeholder="Название" name="cardTitle" minlength="2" maxlength="30" required>
                 <input class="popup__container-item" id="link" type="url" placeholder="Ссылку на картинку" name="cardLink" required>
                 <button type="submit" class="popup__container-button">Сохранить</button>
             </form>
