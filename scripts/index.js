@@ -133,3 +133,18 @@ function renderInitilCards(){
 };
 
 renderInitilCards();
+
+//закрытие попапа через Esc
+const page = document.querySelector(body);
+
+function closebyKey(){
+  page.addEventListener('keydown', (evt) =>{
+    if (evt.key === "Esc"){
+      closeProfilePopup()
+      closeAddForm();
+      closePhotoPopup();
+    };
+  });
+};
+
+closebyKey();
