@@ -134,12 +134,11 @@ function renderInitilCards(){
 
 renderInitilCards();
 
-//закрытие попапа через Esc
-const page = document.querySelector(body);
 
+//закрытие попапа через Esc
 function closebyKey(){
-  page.addEventListener('keydown', (evt) =>{
-    if (evt.key === "Esc"){
+  document.addEventListener('keydown', (evt) =>{
+    if (evt.key === "Escape"){
       closeProfilePopup()
       closeAddForm();
       closePhotoPopup();
