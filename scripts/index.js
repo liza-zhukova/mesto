@@ -1,7 +1,7 @@
 const profilePopup = document.querySelector('#profilePopup');
 const editButton = document.querySelector('.profile__info-edit-button');
-const nameInput = document.querySelector('#name');
-const jobInput = document.querySelector('#opinion');
+const nameInput = document.querySelector('#name-input');
+const jobInput = document.querySelector('#opinion-input');
 const profileName = document.querySelector('.profile__info-name');
 const profileOpinion = document.querySelector('.profile__info-opinion');
 const addButton = document.querySelector('.profile__add-button');
@@ -50,8 +50,8 @@ closeEditButton.addEventListener('click', closeProfilePopup);
 const addForm = document.querySelector('#addPopupContainer');
 const closeAddButton = document.querySelector('#closeAddButton');
 const addCardPopup = document.querySelector('#addCardPopup');
-const titleInput = document.querySelector('#title');
-const linkInput = document.querySelector('#link');
+const titleInput = document.querySelector('#title-input');
+const linkInput = document.querySelector('#link-input');
 
 
 
