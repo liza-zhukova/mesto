@@ -7,14 +7,24 @@ const validationConfig = {
     errorClass: 'popup__container-error_visible'   
 };
 
+function addInactiveButton(button, config){
+    button.classList.add(config.inactiveButtonClass);
+    button.disabled = true;
+}; 
+
+
+function removeInactiveButton(button, config){
+    button.classList.remove(config.inactiveButtonClass);
+    button.disabled = false;
+};
+
+
 
 function toggleButtonSubmit(inputList, button, config){
     if (checkAllInput(inputList)){
-        button.classList.add(config.inactiveButtonClass);
-        button.disabled = true;
+        addInactiveButton(button, config)
     } else{
-        button.classList.remove(config.inactiveButtonClass);
-        button.disabled = false;
+        removeInactiveButton(button, config)
     }
 };
 

@@ -9,14 +9,13 @@ const closeEditButton = document.querySelector('#closeEditButton');
 const profileForm = document.querySelector('#profilePopupContainer');
 
 
-
 //функции открытия и закрытия попапа
 function openPopup(popup){
-  popup.classList.add('popup_opened')
+  popup.classList.add('popup_opened');
 };
 
 function closePopup(popup){
-  popup.classList.remove('popup_opened')
+  popup.classList.remove('popup_opened');
 };
 
 
@@ -147,3 +146,17 @@ function closebyKey(){
 };
 
 closebyKey();
+
+
+//закрытие попапа через оверлей
+function closeByOverley(popup){
+  popup.addEventListener('click', (evt) =>{
+    if (evt.target === popup){
+      closePopup(popup);
+    }
+  });   
+};
+
+closeByOverley(profilePopup);
+closeByOverley(addCardPopup);
+closeByOverley(cardPopup);
