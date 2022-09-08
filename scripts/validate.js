@@ -7,10 +7,13 @@ const validationConfig = {
     errorClass: 'popup__container-error_visible'   
 };
 
+
+
 function addInactiveButton(button, config){
     button.classList.add(config.inactiveButtonClass);
     button.disabled = true;
 }; 
+
 
 
 function removeInactiveButton(button, config){
@@ -67,6 +70,7 @@ function checkInput(form, input, config){
         hideInputError(form, input, config);
     }
 };
+
 
 
 //добавление обработчиков всем полям

@@ -9,10 +9,14 @@ const closeEditButton = document.querySelector('#closeEditButton');
 const profileForm = document.querySelector('#profilePopupContainer');
 
 
+
+
 //функции открытия и закрытия попапа
 function openPopup(popup){
   popup.classList.add('popup_opened');
 };
+
+
 
 function closePopup(popup){
   popup.classList.remove('popup_opened');
