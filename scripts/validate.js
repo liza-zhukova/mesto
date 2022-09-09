@@ -9,14 +9,14 @@ const validationConfig = {
 
 
 
-function addInactiveButton(button, config){
+function disableButton(button, config){
     button.classList.add(config.inactiveButtonClass);
     button.disabled = true;
 }; 
 
 
 
-function removeInactiveButton(button, config){
+function activateButton(button, config){
     button.classList.remove(config.inactiveButtonClass);
     button.disabled = false;
 };
@@ -25,9 +25,9 @@ function removeInactiveButton(button, config){
 
 function toggleButtonSubmit(inputList, button, config){
     if (checkAllInput(inputList)){
-        addInactiveButton(button, config)
+        disableButton(button, config)
     } else{
-        removeInactiveButton(button, config)
+        activateButton(button, config)
     }
 };
 
