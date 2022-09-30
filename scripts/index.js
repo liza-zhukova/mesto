@@ -76,8 +76,6 @@ popups.forEach((popup) => {
 });
 
 
-
-
 // форма добавления карточки
  const addForm = document.querySelector('#addPopupContainer');
  const addCardPopup = document.querySelector('#addCardPopup');
@@ -87,13 +85,15 @@ popups.forEach((popup) => {
 
 
    function openAddForm(){
-     openPopup(addCardPopup);
+    openPopup(addCardPopup);
+    titleInput.value = '';
+    linkInput.value = '';
+    addCardValidate.disableButton();
   };
 
 
   function closeAddForm(){
     closePopup(addCardPopup);
-    addForm.querySelector('.popup__container-form').reset();
   };
 
 
@@ -103,7 +103,6 @@ popups.forEach((popup) => {
    addCard(submitCard);
    closeAddForm();
    evt.target.reset();
-   addCardValidate.disableButton();
  };
 
 
