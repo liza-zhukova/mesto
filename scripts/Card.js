@@ -1,4 +1,7 @@
-class Card {
+import { openPopup } from "./index.js";
+import { titlePhoto } from "./index.js";
+import { bigPhoto } from "./index.js";
+export class Card {
 
     constructor(text, img, selector){
         this._text = text;
