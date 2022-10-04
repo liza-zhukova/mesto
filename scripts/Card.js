@@ -1,12 +1,11 @@
-import { openPopup } from "./index.js";
-import { titlePhoto } from "./index.js";
-import { bigPhoto } from "./index.js";
 export class Card {
 
-    constructor(text, img, selector){
-        this._text = text;
-        this._img = img;
+    constructor(data, selector, handleCardClick){
+        this._data = data;
+        this._name = data.name;
+        this._link = data.link;
         this._selector = selector;
+        this._handleCardClick = handleCardClick;
     }
 
     _getTemplateCard(){
@@ -27,33 +26,28 @@ export class Card {
     }
 
 
-    _openCard(){
-        this._image.addEventListener('click', () =>{  
-            openPopup(cardPopup);
-            titlePhoto.textContent = this._text;
-            bigPhoto.setAttribute('src', this._img);
-            bigPhoto.setAttribute('alt', this._text);
-           });
-    }
-
-
     _deleteCard(){
         this._element.querySelector('.element__card-delete').addEventListener('click', () =>{  
             this._element.remove();
           }); 
     }
 
+    _setEventListeners(){
+        this._toggleLike();
+        this._deleteCard();
+        this._image.addEventListener('click', () =>{ 
+            this._handleCardClick(this._name, this._link)
+        })    
+    }
 
 
     generateCard(){
         this._element = this._getTemplateCard();
         this._image = this._element.querySelector('.element__card-img');
-        this._image.setAttribute('src', this._img);
-        this._image.setAttribute('alt', this._text);
-        this._element.querySelector('.element__card-item-text').textContent = this._text;
-        this._toggleLike();
-        this._openCard();
-        this._deleteCard();
+        this._image.setAttribute('src', this._link);
+        this._image.setAttribute('alt', this._name);
+        this._element.querySelector('.element__card-item-text').textContent = this._name;
+        this._setEventListeners();
 
         return this._element;   
     }   

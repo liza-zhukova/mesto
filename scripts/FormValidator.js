@@ -70,8 +70,15 @@ export class FormValidator {
             this._hideInputError(input);
         }
     }
-        
-        
+     
+    //очистить ошибки
+    resetValidation() {
+        this._toggleButtonState(); 
+        this._inputList.forEach((inputElement) => {
+          this._hideError(inputElement)
+        });
+    }
+    
         
     // //добавление обработчиков всем полям
     _setEventListener(){
