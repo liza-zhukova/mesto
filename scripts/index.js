@@ -91,7 +91,6 @@ function submitProfileEdit (evt) {
     profileName.textContent = nameInput.value;
     profileOpinion.textContent = jobInput.value;
     closePopup(profilePopup);
-    profileValidate.disableButton();
     profileValidate.resetValidation();
 };
 
@@ -130,13 +129,13 @@ function submitAddCard(evt){
   addCard({name:titleInput.value, link:linkInput.value});
   closeAddForm();
   evt.target.reset();
-  addCardValidate.disableButton();
   addCardValidate.resetValidation();
 };
 
 
 addButton.addEventListener('click', openAddForm);
 addForm.addEventListener('submit', submitAddCard);
+
 
 //добавить массив карточек
 initialCards.forEach((card) =>{

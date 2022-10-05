@@ -20,14 +20,14 @@ export class Card {
 
 
     _toggleLike(){
-        this._element.querySelector('.element__card-item-like').addEventListener('click', (evt) =>{  
+        this._like.addEventListener('click', (evt) =>{  
             evt.target.classList.toggle('element__card-item-like_active');
           });
     }
 
 
     _deleteCard(){
-        this._element.querySelector('.element__card-delete').addEventListener('click', () =>{  
+        this._delete.addEventListener('click', () =>{  
             this._element.remove();
           }); 
     }
@@ -44,6 +44,8 @@ export class Card {
     generateCard(){
         this._element = this._getTemplateCard();
         this._image = this._element.querySelector('.element__card-img');
+        this._like = this._element.querySelector('.element__card-item-like');
+        this._delete = this._element.querySelector('.element__card-delete');
         this._image.setAttribute('src', this._link);
         this._image.setAttribute('alt', this._name);
         this._element.querySelector('.element__card-item-text').textContent = this._name;
