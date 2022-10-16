@@ -2,9 +2,9 @@ import { FormValidator } from "./FormValidator.js";
 import { Card } from "./Card.js";
 import { initialCards } from "./cards.js";
 import Section from "./Section.js";
-import Popup from "./Popup.js";
 import PopupWithImage from "./PopupWithImage.js";
 import PopupWithForm from "./PopupWithForm.js";
+import UserInfo from "./UserInfo.js";
 
 const validationConfig = {
   formSelector: '.popup__container-form',
@@ -17,10 +17,8 @@ const validationConfig = {
 
 
 const editButton = document.querySelector('.profile__info-edit-button');
-const nameInput = document.querySelector('#name-input');
-const jobInput = document.querySelector('#opinion-input');
-const profileName = document.querySelector('.profile__info-name');
-const profileOpinion = document.querySelector('.profile__info-opinion');
+const profileName = '.profile__info-name';
+const profileOpinion = '.profile__info-opinion';
 const addButton = document.querySelector('.profile__add-button');
 const profileForm = document.querySelector('#profilePopupContainer');
 const addForm = document.querySelector('#addPopupContainer');
@@ -29,44 +27,34 @@ const linkInput = document.querySelector('#link-input');
 const ElementContainer = '.element';
 
 
+const profilePopup = new PopupWithForm ('#profilePopup', submitProfileEdit);
 
-const profilePopup = new Popup ('#profilePopup');
 profilePopup.setEventListeners();
 
-
-const addCardPopup = new Popup ('#addCardPopup');
+const addCardPopup = new PopupWithForm ('#addCardPopup', handleCardSubmit);
 addCardPopup.setEventListeners();
 
 const cardPopup = new PopupWithImage('#cardPopup');
 cardPopup.setEventListeners();
 
-
-function handleCardClick(name, link){
-  cardPopup.open(name, link);
-};
-
+const userOpinion = new UserInfo (profileName, profileOpinion);
 
 //редактировать профиль
 function openProfilePopup(){
   profilePopup.open();
-  nameInput.value = profileName.textContent;
-  jobInput.value = profileOpinion.textContent;
+  userOpinion.getUserInfo();
 };
 
-const editProfile = new PopupWithForm('#profilePopup', submitProfileEdit);
-editProfile.setEventListeners();
 
 //обновить данные профиля
  function submitProfileEdit() {
-  profileName.textContent = nameInput.value;
-  profileOpinion.textContent = jobInput.value;
-  editProfile.close();
+  userOpinion.setUserInfo();
+  profilePopup.close();
   profileValidate.resetValidation();
 };
 
-editButton.addEventListener('click', openProfilePopup);
  
-
+//фнкция открытия попапа добавления карточки
 function openAddForm(){
   addCardPopup.open();
 };
@@ -74,7 +62,8 @@ function openAddForm(){
 
 //сздать новую карточку 
 function createCard(card) {
-  const cardElement = new Card (card, '#template', handleCardClick).generateCard();
+  const newCard = new Card (card, '#template', handleCardClick);
+  const cardElement = newCard.generateCard();
   return cardElement
 };
 
@@ -82,32 +71,37 @@ function createCard(card) {
 //добавить новую карточку
 function addCard(card){
   document.querySelector(ElementContainer).prepend(createCard(card));
-}
-
-const addCardForm = new PopupWithForm('#addCardPopup', handleCardSubmit);
-addCardForm.setEventListeners();
-
-// сохранить новую карточку
- function handleCardSubmit(){
-  addCard({name:titleInput.value, link:linkInput.value});
-  addCardForm.close()
-  addCardValidate.resetValidation();
 };
 
-addButton.addEventListener('click', openAddForm);
+
+//функция открытия попапа с картинкой
+function handleCardClick(name, link){
+  cardPopup.open(name, link);
+};
+
+
+// сохранить новую карточку
+function handleCardSubmit(){
+  addCard({name:titleInput.value, link:linkInput.value});
+  addCardPopup.close()
+  addCardValidate.resetValidation();
+ };
 
 
 //добавить массив карточек
 const cardList = new Section({
   items: initialCards,
   renderer: (item) =>{
-    const card = new Card (item, '#template', handleCardClick);
-    const cardElement = card.generateCard();
-    cardList.addItem(cardElement);
+    cardList.addItem(createCard(item));
   }
 }, ElementContainer);
 
 cardList.renderItems();
+
+
+//слушатели открытия попапов
+addButton.addEventListener('click', openAddForm);
+editButton.addEventListener('click', openProfilePopup);
 
 
 //активировать валидацию
