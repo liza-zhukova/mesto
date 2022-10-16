@@ -1,5 +1,5 @@
-import { FormValidator } from "./FormValidator.js";
-import { Card } from "./Card.js";
+import FormValidator from "./FormValidator.js";
+import Card from "./Card.js";
 import { initialCards } from "./cards.js";
 import Section from "./Section.js";
 import PopupWithImage from "./PopupWithImage.js";
@@ -28,7 +28,6 @@ const ElementContainer = '.element';
 
 
 const profilePopup = new PopupWithForm ('#profilePopup', submitProfileEdit);
-
 profilePopup.setEventListeners();
 
 const addCardPopup = new PopupWithForm ('#addCardPopup', handleCardSubmit);
