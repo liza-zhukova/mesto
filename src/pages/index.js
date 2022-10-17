@@ -20,57 +20,57 @@ const validationConfig = {
 const editButton = document.querySelector('.profile__info-edit-button');
 const profileName = '.profile__info-name';
 const profileOpinion = '.profile__info-opinion';
+const nameInput = document.querySelector('#name-input');
+const opinionInput = document.querySelector('#opinion-input');
 const addButton = document.querySelector('.profile__add-button');
 const profileForm = document.querySelector('#profilePopupContainer');
 const addForm = document.querySelector('#addPopupContainer');
-const titleInput = document.querySelector('#title-input');
-const linkInput = document.querySelector('#link-input');
-const ElementContainer = '.element';
+const elementContainer = '.element';
 
 
 const profilePopup = new PopupWithForm ('#profilePopup', submitProfileEdit);
 profilePopup.setEventListeners();
 
-const addCardPopup = new PopupWithForm ('#addCardPopup', handleCardSubmit);
-addCardPopup.setEventListeners();
+const newCardElement = new PopupWithForm ('#addCardPopup', handleCardSubmit);
+newCardElement.setEventListeners();
 
 const cardPopup = new PopupWithImage('#cardPopup');
 cardPopup.setEventListeners();
 
-const userOpinion = new UserInfo (profileName, profileOpinion);
+const userOpinion = new UserInfo ({
+  nameSelector: profileName,
+  opinionSelector: profileOpinion,
+});
 
-//редактировать профиль
+
+//открыть попап профиля
 function openProfilePopup(){
   profilePopup.open();
-  userOpinion.getUserInfo();
+  profileValidate.resetValidation();
+  const profileForm = userOpinion.getUserInfo();
+  nameInput.value = profileForm.myName;
+  opinionInput.value = profileForm.myOpinion;
 };
 
 
 //обновить данные профиля
- function submitProfileEdit() {
-  userOpinion.setUserInfo();
-  profilePopup.close();
-  profileValidate.resetValidation();
+ function submitProfileEdit(myName, myOpinion) {
+  userOpinion.setUserInfo(myName, myOpinion)
 };
 
  
 //фнкция открытия попапа добавления карточки
 function openAddForm(){
-  addCardPopup.open();
+  newCardElement.open();
+  addCardValidate.resetValidation();
 };
 
 
-//сздать новую карточку 
+//создать новую карточку 
 function createCard(card) {
   const newCard = new Card (card, '#template', handleCardClick);
   const cardElement = newCard.generateCard();
   return cardElement
-};
-
-
-//добавить новую карточку
-function addCard(card){
-  document.querySelector(ElementContainer).prepend(createCard(card));
 };
 
 
@@ -79,13 +79,10 @@ function handleCardClick(name, link){
   cardPopup.open(name, link);
 };
 
-
-// сохранить новую карточку
-function handleCardSubmit(){
-  addCard({name:titleInput.value, link:linkInput.value});
-  addCardPopup.close()
-  addCardValidate.resetValidation();
- };
+//добавить новую карточку
+function handleCardSubmit (newCardElement){
+  cardList.addItem(createCard(newCardElement));
+};
 
 
 //добавить массив карточек
@@ -94,7 +91,7 @@ const cardList = new Section({
   renderer: (item) =>{
     cardList.addItem(createCard(item));
   }
-}, ElementContainer);
+}, elementContainer);
 
 cardList.renderItems();
 
@@ -105,8 +102,9 @@ editButton.addEventListener('click', openProfilePopup);
 
 
 //активировать валидацию
+const profileValidate = new FormValidator(validationConfig, profileForm);
+profileValidate.enableValidation();
+
 const addCardValidate = new FormValidator(validationConfig, addForm);
 addCardValidate.enableValidation();
 
-const profileValidate = new FormValidator(validationConfig, profileForm);
-profileValidate.enableValidation();

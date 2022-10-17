@@ -1,19 +1,20 @@
 export default class UserInfo{
-    constructor(nameSelector, opinionSelector){
+    constructor({nameSelector, opinionSelector}){
         this._userName = document.querySelector(nameSelector);
         this._userOpinion = document.querySelector(opinionSelector);
-        this._nameInput = document.querySelector('#name-input');
-        this._opinionInput = document.querySelector('#opinion-input');
     }
 
     getUserInfo(){
-        this._nameInput.value = this._userName.textContent;
-        this._opinionInput.value = this._userOpinion.textContent;
+        this._userInfo = {
+            myName: this._userName.textContent,
+            myOpinion: this._userOpinion.textContent
+        };
+        return this._userInfo;
     }
     
 
-    setUserInfo(){
-        this._userName.textContent = this._nameInput.value;
-        this._userOpinion.textContent = this._opinionInput.value;
+    setUserInfo(userInfo){
+        this._userName.textContent = userInfo.myName;
+        this._userOpinion.textContent = userInfo.myOpinion;
     }
 }

@@ -19,25 +19,26 @@ export default class Card {
     }
 
 
-    _toggleLike(){
-        this._like.addEventListener('click', (evt) =>{  
-            evt.target.classList.toggle('element__card-item-like_active');
-          });
+    _toggleLike(){ 
+        this._like.classList.toggle('element__card-item-like_active');    
     }
 
 
     _deleteCard(){
-        this._delete.addEventListener('click', () =>{  
-            this._element.remove();
-          }); 
+        this._element.remove();
+        this._element = null; 
     }
 
     _setEventListeners(){
-        this._toggleLike();
-        this._deleteCard();
+        this._delete.addEventListener('click', () => {
+            this._deleteCard()
+        });
+        this._like.addEventListener('click', () => {
+            this._toggleLike()
+        });
         this._image.addEventListener('click', () =>{ 
             this._handleCardClick(this._name, this._link)
-        })    
+        });   
     }
 
 
