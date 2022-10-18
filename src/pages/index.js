@@ -54,8 +54,8 @@ function openProfilePopup(){
 
 
 //обновить данные профиля
- function submitProfileEdit(myName, myOpinion) {
-  userOpinion.setUserInfo(myName, myOpinion)
+ function submitProfileEdit({myName, myOpinion}) {
+  userOpinion.setUserInfo({myName, myOpinion})
 };
 
  
