@@ -5,7 +5,7 @@
 .header__logo{height:33px;margin-bottom:40px;margin-right:27px;width:142px}@media screen and (max-width:920px){.header__logo{height:24px;margin-bottom:30px;margin-left:27px;width:104px}}
 .main{display:flex;flex-direction:column;margin:0 auto;max-width:880px}@media screen and (max-width:920px){.main{max-width:320px}}
 .profile{align-items:center;display:flex;margin-top:40px}@media screen and (max-width:920px){.profile{flex-direction:column}}
-.profile__avatar{background-image:url(cdd6970e3d9f228be0e9.jpg);background-position:50%;background-repeat:no-repeat;border-radius:50%;height:120px;margin-right:30px;-o-object-fit:contain;object-fit:contain;width:120px}@media screen and (max-width:920px){.profile__avatar{align-self:center;margin:0 0 23px}}
+.profile__avatar{background-position:50%;background-repeat:no-repeat;border-radius:50%;height:120px;margin-right:30px;width:120px;z-index:1}@media screen and (max-width:920px){.profile__avatar{align-self:center;margin:0 0 23px}}.profile__avatar:hover{opacity:.3;transition:opacity .3s}
 .profile__info{align-self:center;display:flex;flex-flow:wrap;margin:0;max-width:370px}@media screen and (max-width:920px){.profile__info{justify-content:center}}
 .profile__info-edit-button{align-self:flex-start;background-color:transparent;background-image:url(af236f6cf67005f1d7aa.svg);border:none;color:inherit;cursor:pointer;font:inherit;height:24px;margin-top:15px;opacity:.7;padding:0;width:24px}@media screen and (max-width:920px){.profile__info-edit-button{background-image:url(f66e917d7fb212913c9e.svg);height:18px;margin-top:7px;width:18px}}.profile__info-edit-button:hover{opacity:.6;transition:opacity .3s}
 .profile__info-name{align-self:baseline;color:#fff;font-family:Inter,Optima,sans-serif;font-size:42px;font-weight:500;margin:0 16px 0 0;max-width:330px;min-width:auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}@media screen and (max-width:920px){.profile__info-name{font-size:27px;max-width:220px;text-align:center}}
@@ -15,8 +15,10 @@
 .element__card{align-self:center;display:flex;flex-direction:column;height:361px;margin-bottom:20px;margin-right:17px;position:relative;width:282px}.element__card:nth-child(3n){margin-right:0}@media screen and (max-width:920px){.element__card{margin-right:0}}
 .element__card-img{border-top-left-radius:10px;border-top-right-radius:10px;color:#fff;cursor:pointer;height:282px}.element__card-img:hover{opacity:.6;transition:opacity .3s}
 .element__card-item{align-items:center;background-color:#fff;border-bottom-left-radius:10px;border-bottom-right-radius:10px;display:flex;height:79px;justify-content:space-around}
-.element__card-item-like{background-color:transparent;background-image:url(1ad06e85f169668a1f36.svg);border:none;color:inherit;cursor:pointer;font:inherit;height:19px;padding:0;width:22px}.element__card-item-like:hover{opacity:.5;transition:opacity .3s}
-.element__card-item-like_active{background-color:transparent;background-image:url(dd6a61e81552be95f4b7.svg);border:none;color:inherit;cursor:pointer;font:inherit;height:19px;padding:0;width:22px}
+.element__card-item-like{background-color:transparent;background-image:url(1ad06e85f169668a1f36.svg);border:none;color:inherit;cursor:pointer;font:inherit;height:19px;margin-bottom:3px;padding:0;width:22px}.element__card-item-like:hover{opacity:.5;transition:opacity .3s}
+.element__card-item-like-number{color:#000;font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:400;margin:0;text-align:center}
+.element__card-item_like-container{display:flex;flex-direction:column;margin:0;width:22px}
+.element__card-item-like_active{background-color:transparent;background-image:url(dd6a61e81552be95f4b7.svg);border:none;color:inherit;cursor:pointer;font:inherit;height:19px;padding:0}
 .element__card-item-text{color:#000;font-family:Inter,Arial Black,sans-serif;font-size:24px;font-weight:900;line-height:29px;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:180px}
 .element__card-delete{background-color:transparent;background-image:url(e3c42771bff3aaa52f76.svg);border:none;color:inherit;cursor:pointer;font:inherit;height:19px;padding:0;position:absolute;right:20px;top:20px;width:18px}.element__card-delete:hover{opacity:.6;transition:opacity .3s}
 .footer{align-self:baseline;display:flex;margin:47px auto 0;max-width:880px;padding-bottom:60px}@media screen and (max-width:920px){.footer{margin-top:28px;max-width:282px;padding-bottom:36px}}
@@ -27,6 +29,7 @@
 .popup__container{align-self:center;background-color:#fff;border-radius:10px;box-sizing:border-box;display:flex;flex-direction:column;padding:34px 36px 37px;position:relative;width:430px}@media screen and (max-width:920px){.popup__container{padding:25px 22px;width:282px}}
 .popup__container-title{color:#000;font-family:Inter,Arial Black,sans-serif;font-size:24px;font-weight:900;margin:0}@media screen and (max-width:920px){.popup__container-title{font-size:18px}}
 .popup__container-form{display:flex;flex-direction:column;margin-top:54px}@media screen and (max-width:920px){.popup__container-form{margin-top:75px}}
+.popup__container-form_delete{margin-top:38px}
 .popup__container-item{border:none;border-bottom:1px solid rgba(0,0,0,.2);color:#000;font-family:Inter,Arial,sans-serif;font-size:14px;font-weight:400;padding-bottom:13px}
 .popup__container-button{background-color:#000;border:none;color:#fff;cursor:pointer;font-family:Inter,Arial,sans-serif;font-size:18px;font-weight:400;height:50px;margin-top:18px;outline:none;text-align:center}@media screen and (max-width:920px){.popup__container-button{font-size:14px;height:46px;margin-top:15px}}.popup__container-button:hover{opacity:.8;transition:opacity .3s}
 .popup_photo{background:rgba(0,0,0,.9)}
@@ -39,4 +42,6 @@
 .popup__container-button_disabled{background-color:initial;border:1px solid #000;color:#000;opacity:.2}.popup__container-button_disabled:hover{opacity:.2;transition:none}
 .popup__container-item_type_error{border-bottom-color:red;color:#000}
 .popup__container-field{display:flex;flex-direction:column;margin-bottom:13px;position:relative}
+.profile__avatar-container{margin:0;position:relative}.profile__avatar-container:hover{cursor:pointer}
+.profile__avatar-edit{background-color:transparent;background-image:url(a086f758840ae814ecde.svg);border:none;cursor:pointer;height:26px;left:47px;margin:0 auto;padding:0;position:absolute;top:47px;width:26px;z-index:-1}
 
