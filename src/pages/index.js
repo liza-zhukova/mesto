@@ -163,7 +163,7 @@ function handleCardSubmit (newCardElement){
   return api
   .addNewCards(newCardElement.name, newCardElement.link)
   .then((newCard) =>{
-    cardList.addMyItem(createCard(newCard));
+    cardList.addItem(createCard(newCard));
     newCardElementPopup.close();
   })
   .catch((err) => console.log(err))
