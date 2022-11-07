@@ -1,6 +1,5 @@
 .element__card-item-like_active{
     background-image: url(../../../../images/activeLike.svg);
-    width: 22px;
     height: 19px;
     padding: 0;
     color: inherit;
