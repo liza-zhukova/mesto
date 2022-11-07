@@ -7,22 +7,16 @@ export default class FormValidator {
         this._button = this.form.querySelector(this.config.submitButtonSelector);
     }
 
-
-
     disableButton(){
         this._button.classList.add(this.config.inactiveButtonClass);
         this._button.disabled = true;
     } 
-        
-        
-        
+          
     _activateButton(){
         this._button.classList.remove(this.config.inactiveButtonClass);
         this._button.disabled = false;
     }
-        
-        
-        
+          
     _toggleButtonSubmit(){
         if (this._checkAllInput()){
             this.disableButton()
@@ -31,16 +25,12 @@ export default class FormValidator {
         }
     }
         
-        
-        
     //находим невалидное поле
     _checkAllInput(){
         return this._inputList.some((input) =>{
             return !input.validity.valid
         });
     }
-        
-        
         
     //добавление ошибки 
     _showInputError(input, errorMessage){
@@ -49,9 +39,7 @@ export default class FormValidator {
         errorElement.textContent = errorMessage;
         errorElement.classList.add(this.config.errorClass);
     }
-        
-        
-        
+          
     // //удаление ошибки
     _hideInputError(input){
         const errorElement = this.form.querySelector(`.${input.id}-error`);
@@ -59,9 +47,7 @@ export default class FormValidator {
         errorElement.textContent ='';
         errorElement.classList.remove(this.config.errorClass);
     }
-        
-        
-        
+          
     // проверка валидности
     _checkInput(input){
         if (!input.validity.valid){
@@ -79,7 +65,6 @@ export default class FormValidator {
         });
     }
     
-        
     // //добавление обработчиков всем полям
     _setEventListener(){
         
@@ -91,11 +76,9 @@ export default class FormValidator {
                 this._toggleButtonSubmit();
             });
         });
-    }
-             
+    }      
         
     enableValidation(){
         this._setEventListener();   
-    }
-    
+    } 
 }         

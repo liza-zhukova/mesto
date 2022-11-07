@@ -7,17 +7,9 @@ import UserInfo from "../components/UserInfo.js";
 import './index.css'; 
 import Api from "../components/Api.js";
 import PopupWithConfirmation from '../components/PopupWithConfirmation.js';
+import { validationConfig } from "../utils/constants.js";
 
-const validationConfig = {
-  formSelector: '.popup__container-form',
-  inputSelector: '.popup__container-item',
-  submitButtonSelector: '.popup__container-button',
-  inactiveButtonClass: 'popup__container-button_disabled',
-  inputErrorClass: 'popup__container-item_type_error',
-  errorClass: 'popup__container-error_visible'   
-};
-
-const editButton = document.querySelector('.profile__info-edit-button');
+const buttonEdit = document.querySelector('.profile__info-edit-button');
 const profileName = '.profile__info-name';
 const profileOpinion = '.profile__info-opinion';
 const profileAvatar = '.profile__avatar';
@@ -25,13 +17,10 @@ const nameInput = document.querySelector('#name-input');
 const opinionInput = document.querySelector('#opinion-input');
 const addButton = document.querySelector('.profile__add-button');
 const profileForm = document.querySelector('#profilePopupContainer');
-const addForm = document.querySelector('#addPopupContainer');
+const cardForm = document.querySelector('#addPopupContainer');
 const elementContainer = '.element';
 const avatarButton = document.querySelector('.profile__avatar-container');
-const updateAvatar = document.querySelector('#editAvatarPopupContainer');
-
-
-
+const avatarForm = document.querySelector('#editAvatarPopupContainer');
 
 //создание всех попапов
 const profilePopup = new PopupWithForm ('#profilePopup', submitProfileEdit);
@@ -55,8 +44,6 @@ const userOpinion = new UserInfo ({
   avatarSelector: profileAvatar,
 });
 
-
-
 //работа с апи
 const api = new Api({
   url:'https://mesto.nomoreparties.co/v1/cohort-52/',
@@ -76,9 +63,6 @@ Promise.all([api.getProfileInfo(), api.getCards()])
   })
   .catch((err) => console.log(err));
 
-
-
-
 //открыть попап профиля
 function openProfilePopup(){
   profilePopup.open();
@@ -87,7 +71,6 @@ function openProfilePopup(){
   nameInput.value = profileForm.name;
   opinionInput.value = profileForm.about;
 };
-
 
 //обновить данные профиля
 function submitProfileEdit(data){
@@ -104,13 +87,11 @@ function submitProfileEdit(data){
       });
 };
 
-
 //открытие попапа аватара
 function openAvatarPopup(){
   avatarPopup.open();
   avatarValidate.resetValidation();
 };
-
 
 //обновить аватар профиля
 function handleAvatarSubmit(url){
@@ -127,9 +108,6 @@ function handleAvatarSubmit(url){
   })
 };
  
-
-
-
 //расположение карточки
 const cardList = new Section({
   renderer: (initialCards) =>{
@@ -137,13 +115,11 @@ const cardList = new Section({
   }
 }, elementContainer);
 
-
 //фнкция открытия попапа добавления карточки
 function openAddForm(){
   newCardElementPopup.open();
   addCardValidate.resetValidation();
 };
-
 
 //создание новой карточки 
 function createCard(cardData) {
@@ -181,14 +157,13 @@ function createCard(cardData) {
   return cardElement
 };
 
-
 //добавить новую карточку
 function handleCardSubmit (newCardElement){
   newCardElementPopup.toggleTextButton(true);
   return api
   .addNewCards(newCardElement.name, newCardElement.link)
   .then((newCard) =>{
-    cardList.addItem(createCard(newCard));
+    cardList.addMyItem(createCard(newCard));
     newCardElementPopup.close();
   })
   .catch((err) => console.log(err))
@@ -197,12 +172,10 @@ function handleCardSubmit (newCardElement){
   })
 };
 
-
 //функция-коллбек открытия попапа с картинкой
 function handleCardClick(name, link){
   cardPopup.open(name, link);
 };
-
 
 //удалить карточку
 function handleForDeleteCard(card){
@@ -215,23 +188,17 @@ function handleForDeleteCard(card){
   .catch((err) => console.log(err));
 ;}
 
-
-
-
 //слушатели открытия попапов
 addButton.addEventListener('click', openAddForm);
-editButton.addEventListener('click', openProfilePopup);
+buttonEdit.addEventListener('click', openProfilePopup);
 avatarButton.addEventListener('click', openAvatarPopup);
-
-
-
 
 //активировать валидацию
 const profileValidate = new FormValidator(validationConfig, profileForm);
 profileValidate.enableValidation();
 
-const addCardValidate = new FormValidator(validationConfig, addForm);
+const addCardValidate = new FormValidator(validationConfig, cardForm);
 addCardValidate.enableValidation();
 
-const avatarValidate = new FormValidator(validationConfig, updateAvatar);
+const avatarValidate = new FormValidator(validationConfig, avatarForm);
 avatarValidate.enableValidation();

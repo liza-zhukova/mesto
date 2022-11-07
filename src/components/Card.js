@@ -39,11 +39,9 @@ export default class Card {
         this._like.classList.add('element__card-item-like_active');
     }
 
-
     deleteLike(){
         this._like.classList.remove('element__card-item-like_active');
     }
-
 
     _isLiked(){
         this._likes.forEach((user) =>{
@@ -79,7 +77,6 @@ export default class Card {
         });   
     }
 
-
     generateCard(){
         this._element = this._getTemplateCard();
         this._image = this._element.querySelector('.element__card-img');
@@ -96,6 +93,5 @@ export default class Card {
         this._isOwn();
 
         return this._element;   
-    }   
-    
+    }     
 }
